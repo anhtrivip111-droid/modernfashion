@@ -1,20 +1,169 @@
-.hidden {
-  display: none;
+* {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,sans-serif;
 }
 
-/* CATEGORY */
-.category {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+body {
+  margin: 0;
+  background: #f6f6f6;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(180deg,#c55a3a,#a33d23);
+  padding: 18px 14px 22px;
+  color: #fff;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop {
+  display: flex;
   gap: 10px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.header h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.header span {
+  font-size: 13px;
+  opacity: .9;
+}
+
+.search {
+  margin-top: 14px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 22px;
+  border: none;
+  font-size: 14px;
+}
+
+.share {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+/* TAB */
+.tab {
+  display: flex;
+  background: #fff;
+}
+
+.tab div {
+  flex: 1;
+  text-align: center;
   padding: 12px;
 }
 
-.cat {
+.tab .active {
+  color: #ee4d2d;
+  border-bottom: 2px solid #ee4d2d;
+}
+
+/* FILTER */
+.filter {
+  display: flex;
   background: #fff;
-  border-radius: 8px;
-  padding: 20px 10px;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.filter span {
+  flex: 1;
   text-align: center;
-  font-weight: 500;
-  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+
+.filter .active {
+  color: #ee4d2d;
+}
+
+/* PRODUCT */
+.list {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 8px;
+  padding: 8px;
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.item {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.thumb {
+  position: relative;
+}
+
+.thumb img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.discount {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.tag {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  font-size: 11px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.mall { background: #ee4d2d; }
+.love { background: #ff4d4f; }
+
+.info {
+  padding: 6px;
+}
+
+.info h3 {
+  font-size: 14px;
+  line-height: 1.3;
+  height: 36px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.price {
+  color: #ee4d2d;
+  font-weight: bold;
+}
+
+.sold {
+  font-size: 12px;
+  color: #888;
 }
