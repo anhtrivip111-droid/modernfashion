@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Mỗi Ngày 1 Style</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="My Collection – Thời trang nam nữ, gắn link Shopee & TikTok Shop">
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,72 +24,81 @@
   <input class="search" placeholder="Tìm kiếm sản phẩm">
 </header>
 
-<!-- TAB -->
 <nav class="tab">
-  <div class="active" onclick="showTab('products')">Sản phẩm</div>
-  <div onclick="showTab('categories')">Danh mục</div>
+  <div class="active">Sản phẩm</div>
+  <div>Danh mục</div>
 </nav>
 
-<!-- FILTER -->
-<nav class="filter" id="filter">
+<nav class="filter">
   <span class="active">Phổ biến</span>
   <span>Mới nhất</span>
-  <span>Bán chạy</span>
+  <span>Bán chạy nhất</span>
   <span>Giá ⬍</span>
 </nav>
 
-<!-- PRODUCT LIST -->
-<main class="list" id="products">
-  <div class="item">
-    <div class="thumb">
-      <span class="discount">-61%</span>
-      <img src="https://i.imgur.com/YW4FqvN.png">
-    </div>
-    <div class="info">
-      <span class="tag love">Yêu thích</span>
-      <h3>Quần tây nam cao cấp</h3>
-      <div class="price">₫85.000</div>
-      <div class="sold">Đã bán 20k+</div>
-    </div>
+<main class="list">
+
+<a href="https://shopee.vn" target="_blank" class="product-link">
+<div class="item">
+  <div class="thumb">
+    <span class="tag love">Yêu thích</span>
+    <span class="discount">-61%</span>
+    <img src="https://i.imgur.com/YW4FqvN.png">
   </div>
-
-  <div class="item">
-    <div class="thumb">
-      <span class="discount">-45%</span>
-      <img src="https://i.imgur.com/vU8QZkZ.png">
-    </div>
-    <div class="info">
-      <span class="tag mall">Mall</span>
-      <h3>Áo hoodie zip local brand</h3>
-      <div class="price">₫220.000</div>
-      <div class="sold">Đã bán 30k+</div>
-    </div>
+  <div class="info">
+    <h3>Quần tây nam cao cấp vải co giãn mềm mịn form chuẩn</h3>
+    <div class="price">₫85.000</div>
+    <div class="sold">Đã bán 20k+</div>
   </div>
+</div>
+</a>
+
+<a href="https://shopee.vn" target="_blank" class="product-link">
+<div class="item">
+  <div class="thumb">
+    <span class="tag mall">Mall</span>
+    <span class="discount">-45%</span>
+    <img src="https://i.imgur.com/vU8QZkZ.png">
+  </div>
+  <div class="info">
+    <h3>Áo khoác nỉ hoodie zip nam nữ local brand unisex</h3>
+    <div class="price">₫220.000</div>
+    <div class="sold">Đã bán 30k+</div>
+  </div>
+</div>
+</a>
+
+<a href="https://shopee.vn" target="_blank" class="product-link">
+<div class="item">
+  <div class="thumb">
+    <span class="tag mall">Mall</span>
+    <span class="discount">-31%</span>
+    <img src="https://i.imgur.com/hcZKpN9.png">
+  </div>
+  <div class="info">
+    <h3>Quần âu nam PN form slim công sở cao cấp</h3>
+    <div class="price">₫185.000</div>
+    <div class="sold">Mall</div>
+  </div>
+</div>
+</a>
+
+<a href="https://shopee.vn" target="_blank" class="product-link">
+<div class="item">
+  <div class="thumb">
+    <span class="tag love">Yêu thích</span>
+    <span class="discount">-37%</span>
+    <img src="https://i.imgur.com/9WZQZqZ.png">
+  </div>
+  <div class="info">
+    <h3>Áo hoodie local brand form rộng phong cách streetwear</h3>
+    <div class="price">₫250.000</div>
+    <div class="sold">Yêu thích</div>
+  </div>
+</div>
+</a>
+
 </main>
-
-<!-- CATEGORY -->
-<main class="category hidden" id="categories">
-  <div class="cat">👕 Áo thun</div>
-  <div class="cat">🧥 Hoodie</div>
-  <div class="cat">👖 Quần</div>
-  <div class="cat">🧢 Phụ kiện</div>
-  <div class="cat">🔥 Bán chạy</div>
-  <div class="cat">✨ Local Brand</div>
-</main>
-
-<script>
-function showTab(tab){
-  document.querySelectorAll('.tab div').forEach(t=>t.classList.remove('active'))
-  event.target.classList.add('active')
-
-  document.getElementById('products').classList.add('hidden')
-  document.getElementById('categories').classList.add('hidden')
-  document.getElementById(tab).classList.remove('hidden')
-
-  document.getElementById('filter').style.display = 
-    tab === 'products' ? 'flex' : 'none'
-}
-</script>
 
 </body>
 </html>
