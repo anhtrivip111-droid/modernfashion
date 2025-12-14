@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Mỗi Ngày 1 Style</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-top">
+    <div class="shop">
+      <img class="avatar" src="https://i.imgur.com/8Km9tLL.png">
+      <div>
+        <h1>Mỗi Ngày 1 Style</h1>
+        <span>Ở đây nhiều đồ Chất + Gu</span>
+      </div>
+    </div>
+    <button class="share">↗</button>
+  </div>
+  <input class="search" placeholder="Tìm kiếm sản phẩm">
+</header>
+
+<!-- TAB -->
+<nav class="tab">
+  <div class="active" onclick="showTab('products')">Sản phẩm</div>
+  <div onclick="showTab('categories')">Danh mục</div>
+</nav>
+
+<!-- FILTER -->
+<nav class="filter" id="filter">
+  <span class="active">Phổ biến</span>
+  <span>Mới nhất</span>
+  <span>Bán chạy</span>
+  <span>Giá ⬍</span>
+</nav>
+
+<!-- PRODUCT LIST -->
+<main class="list" id="products">
+  <div class="item">
+    <div class="thumb">
+      <span class="discount">-61%</span>
+      <img src="https://i.imgur.com/YW4FqvN.png">
+    </div>
+    <div class="info">
+      <span class="tag love">Yêu thích</span>
+      <h3>Quần tây nam cao cấp</h3>
+      <div class="price">₫85.000</div>
+      <div class="sold">Đã bán 20k+</div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb">
+      <span class="discount">-45%</span>
+      <img src="https://i.imgur.com/vU8QZkZ.png">
+    </div>
+    <div class="info">
+      <span class="tag mall">Mall</span>
+      <h3>Áo hoodie zip local brand</h3>
+      <div class="price">₫220.000</div>
+      <div class="sold">Đã bán 30k+</div>
+    </div>
+  </div>
+</main>
+
+<!-- CATEGORY -->
+<main class="category hidden" id="categories">
+  <div class="cat">👕 Áo thun</div>
+  <div class="cat">🧥 Hoodie</div>
+  <div class="cat">👖 Quần</div>
+  <div class="cat">🧢 Phụ kiện</div>
+  <div class="cat">🔥 Bán chạy</div>
+  <div class="cat">✨ Local Brand</div>
+</main>
+
+<script>
+function showTab(tab){
+  document.querySelectorAll('.tab div').forEach(t=>t.classList.remove('active'))
+  event.target.classList.add('active')
+
+  document.getElementById('products').classList.add('hidden')
+  document.getElementById('categories').classList.add('hidden')
+  document.getElementById(tab).classList.remove('hidden')
+
+  document.getElementById('filter').style.display = 
+    tab === 'products' ? 'flex' : 'none'
+}
+</script>
+
+</body>
+</html>
