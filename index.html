@@ -7,7 +7,23 @@
 <meta name="description" content="My Collection – Thời trang nam nữ, gắn link Shopee & TikTok Shop">
 <link rel="stylesheet" href="style.css">
 </head>
+<script>
+function showTab(tab) {
+  document.querySelectorAll('.tab div')
+    .forEach(el => el.classList.remove('active'));
 
+  event.target.classList.add('active');
+
+  document.getElementById('products').classList.add('hidden');
+  document.getElementById('categories').classList.add('hidden');
+
+  document.getElementById(tab).classList.remove('hidden');
+
+  // Ẩn filter khi vào Danh mục
+  document.querySelector('.filter').style.display =
+    tab === 'products' ? 'flex' : 'none';
+}
+</script>
 <body>
 
 <header class="header">
@@ -25,8 +41,8 @@
 </header>
 
 <nav class="tab">
-  <div class="active">Sản phẩm</div>
-  <div>Danh mục</div>
+  <div class="active" onclick="showTab('products')">Sản phẩm</div>
+  <div onclick="showTab('categories')">Danh mục</div>
 </nav>
 
 <nav class="filter">
@@ -36,8 +52,15 @@
   <span>Giá ⬍</span>
 </nav>
 
-<main class="list">
-
+<main class="list" id="products">
+<main class="category hidden" id="categories">
+  <div class="cat">👕 Áo</div>
+  <div class="cat">👖 Quần</div>
+  <div class="cat">🧥 Hoodie</div>
+  <div class="cat">🧢 Phụ kiện</div>
+  <div class="cat">🔥 Bán chạy</div>
+  <div class="cat">✨ Local brand</div>
+</main>
 <a href="https://shopee.vn" target="_blank" class="product-link">
 <div class="item">
   <div class="thumb">
