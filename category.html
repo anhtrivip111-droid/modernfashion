@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Danh mục</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-top">
+    <button onclick="history.back()" class="back">←</button>
+    <h1 id="category-title">Danh mục</h1>
+  </div>
+</header>
+
+<main class="list" id="category-list"></main>
+
+<script>
+const products = [
+  {
+    id: 1,
+    name: "Áo khoác bomber nam",
+    price: "₫258.999",
+    img: "https://i.imgur.com/YW4FqvN.png",
+    link: "https://shopee.vn",
+    category: "ao-khoac"
+  },
+  {
+    id: 2,
+    name: "Áo khoác kẻ sọc cổ điển",
+    price: "₫403.704",
+    img: "https://i.imgur.com/vU8QZkZ.png",
+    link: "https://shopee.vn",
+    category: "ao-khoac"
+  },
+  {
+    id: 3,
+    name: "Hoodie local brand",
+    price: "₫250.000",
+    img: "https://i.imgur.com/9WZQZqZ.png",
+    link: "https://shopee.vn",
+    category: "hoodie"
+  }
+];
+
+// Lấy category từ URL
+const params = new URLSearchParams(window.location.search);
+const cat = params.get('cat');
+
+// Đổi tiêu đề
+const titleMap = {
+  "ao-khoac": "Áo Khoác Jacket",
+  "hoodie": "Áo Khoác Hoodie",
+  "quan": "Quần"
+};
+
+document.getElementById("category-title").innerText =
+  titleMap[cat] || "Danh mục";
+
+// Render sản phẩm
+const list = document.getElementById("category-list");
+
+products
+  .filter(p => p.category === cat)
+  .forEach(p => {
+    list.innerHTML += `
+      <a href="${p.link}" target="_blank" class="product-link">
+        <div class="item">
+          <div class="thumb">
+            <img src="${p.img}">
+          </div>
+          <div class="info">
+            <h3>${p.name}</h3>
+            <div class="price">${p.price}</div>
+          </div>
+        </div>
+      </a>
+    `;
+  });
+</script>
+
+</body>
+</html>
